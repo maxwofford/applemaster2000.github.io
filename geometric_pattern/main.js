@@ -9,6 +9,10 @@ function setup(){
     createCanvas(480,600);
     circleDiameter = width/NUM_CIRCLES;
     circleRadius = circleDiameter/2;
+    
+    rVal = 255;
+    gVal = 0;
+    bVal = 0;
 }
 function keyPressed(){
     if(keyCode === 115 || keyCode === 83){
@@ -17,10 +21,6 @@ function keyPressed(){
     return false;
 }
 function draw(){
-    rVal = 255;
-    gVal = 0;
-    bVal = 0;
-    
     var alternatingRow = false;
     
     var y = height;
@@ -35,14 +35,14 @@ function draw(){
         }
         while(x <= width){
             fill(color(rVal, gVal, bVal));
-            stroke(color(rVal, gVal, bVal));
+            stroke(color(rVal - 50, gVal + 30, bVal + 40));
             ellipse(x, y, circleDiameter, circleDiameter);
             x = x + circleDiameter;
         }
         y = y - circleRadius;
         alternatingRow = !alternatingRow;
-        rVal = rVal - 1;
-        gVal = gVal + 5;
-        bVal = bVal + 2;
+        rVal = (rVal + 10)%256;
+        gVal = (gVal + 25)%256;
+        bVal = (bVal + 100)%256;
     }
 }
