@@ -4,9 +4,14 @@ var circleRadius;
 var rVal;
 var gVal;
 var bVal;
+var body = document.body,
+html = document.documentElement;
+
+var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
 
 function setup(){
-    createCanvas(480,600);
+    createCanvas(window.innerHeight, window.innerWidth);
     circleDiameter = width/NUM_CIRCLES;
     circleRadius = circleDiameter/2;
     
