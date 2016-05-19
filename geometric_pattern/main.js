@@ -11,7 +11,7 @@ var height = Math.max( body.scrollHeight, body.offsetHeight,
                        html.clientHeight, html.scrollHeight, html.offsetHeight );
 
 function setup(){
-    createCanvas(window.innerHeight, window.innerWidth);
+    createCanvas(window.innerWidth, window.innerHeight);
     circleDiameter = width/NUM_CIRCLES;
     circleRadius = circleDiameter/2;
     
