@@ -6,7 +6,7 @@ var isGameOver;
 var backgroundImage;
 
 function setup(){
-    createCanvas(250, 250);
+    createCanvas(window.innerWidth/2, window.innerHeight/1.1);
     player = createSprite(width/2, height-(playerImage.height/2), 0, 0);
     player.addImage(playerImage);
     enemy = createSprite(width/2, 0, 0, 0);
