@@ -25,9 +25,9 @@ function movePlayer(){
 }
 
 function preload(){
-    playerImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/N5uCbDu.png");
-    backgroundImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/aKQOg3G.png");
-    enemyImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/OdL0XPt.png");
+    playerImage = loadImage("player.png");
+    backgroundImage = loadImage("background.png");
+    enemyImage = loadImage("moon-15892-large.png");
 }
 
 function gameOver(){
