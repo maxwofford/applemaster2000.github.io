@@ -1,15 +1,25 @@
-<html>
+<!DOCTYPE html>
   <head>
     <script src="https://aframe.io/releases/0.2.0/aframe.js"></script>
     <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script>
     <script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
     <script src="game.js"></script>
+    
+    <style>
+      #score{
+        z-index:10; 
+        color:white; 
+        position:absolute; 
+        top:0px; 
+        margin:10px;
+      }
+    
+    </style>
   </head>
   <body>
-    
+    <div id="score">Score:</div>
 <a-scene>
   <a-assets>
-    
     <img id="enemy-sprite" crossorigin="" src="https://ucarecdn.com/f11bb3e6-ceb4-427c-bcaa-351cabac37d5/">
 
     <script id="enemies" type="text/x-nunjucks-template">
@@ -36,8 +46,8 @@
   </a-assets>
   <a-entity template="src: #enemies" data-num="10"></a-entity>
   <a-sky src="https://ucarecdn.com/49f8cfbc-ee57-444b-b954-3beb1709080c/"></a-sky>
-  <a-camera id="player" position = "0 1.8 0" spawner="mixin: laser; on: click" click-listener><a-cursor color="#FFFFFF"></a-camera>
-
+  <a-camera id="player" position = "0 1.8 0" spawner="mixin: laser; on: click" click-listener><a-cursor color="#FFFFFF"></a-cursor></a-camera>
+  
 </a-scene>
   </body>
 </html>

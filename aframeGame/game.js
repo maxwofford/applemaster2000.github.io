@@ -1,4 +1,4 @@
-
+var score = 0;
 
 // collider component to check for collisions.
 AFRAME.registerComponent('collider', {
@@ -45,8 +45,9 @@ AFRAME.registerComponent('collider', {
     collisionResults = raycaster.intersectObjects(this.targets, true);
     collisionResults.forEach(function (target) {
       // Tell collided entity about the collision.
-      target.object.el.emit('collider-hit', {target: el});
-
+    target.object.el.emit('collider-hit', {target: el});
+    score++;
+    document.getElementById("score").innerHTML = score;
     });
   }
 });  
@@ -111,7 +112,7 @@ AFRAME.registerComponent('spawner', {
 AFRAME.registerComponent('click-listener', {
   init: function () {
     var el = this.el;
-    window.addEventListener('click', function () {
+    window.addEventListener('ssclick', function () {
       el.emit('click', null, false);
     });
   }
